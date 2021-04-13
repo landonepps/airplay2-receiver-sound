@@ -45,7 +45,7 @@ def get_volume():
         pct = int(subprocess.check_output(["osascript", "-e", "output volume of (get volume settings)"]).rstrip())
         vol = interpolate(pct, 0, 100, -30, 0)
     elif subsys == "Linux":
-        line_pct = subprocess.check_output(["amixer", "get", "PCM"]).splitlines()[-1]
+        line_pct = subprocess.check_output(["amixer", "get", "Headphone"]).splitlines()[-1]
         m = re.search(b"\[([0-9]+)%\]", line_pct)
         if m:
             pct = int(m.group(1))
@@ -72,4 +72,4 @@ def set_volume(vol):
     elif subsys == "Linux":
         pct = int(interpolate(vol, -30, 0, 45, 100))
 
-        subprocess.run(["amixer", "set", "PCM", "%d%%" % pct])
+        subprocess.run(["amixer", "set", "Headphone", "%d%%" % pct])
