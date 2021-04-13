@@ -8,7 +8,7 @@ import time
 
 import av
 import numpy
-import pyaudio
+import alsaaudio
 from Crypto.Cipher import ChaCha20_Poly1305
 from av.audio.format import AudioFormat
 
@@ -206,11 +206,11 @@ class Audio:
         self.rtp_buffer = RTPBuffer()
 
     def init_audio_sink(self):
-        self.pa = pyaudio.PyAudio()
-        self.sink = self.pa.open(format=self.pa.get_format_from_width(2),
-                                 channels=2,
-                                 rate=44100,
-                                 output=True)
+        self.alsa = alsaaudio.PCM(device="default",
+                                  channels=2,
+                                  rate=44100,
+                                  format=alsaaudio.PCM_FORMAT_S16_LE,
+                                  periodsize=1024)
         codec = None
         extradata = None
         if self.audio_format == Audio.AudioFormat.ALAC_44100_16_2.value:
@@ -285,7 +285,7 @@ class AudioRealtime(Audio):
         self.port = self.socket.getsockname()[1]
 
     def fini_audio_sink(self):
-        self.sink.close()
+        # pyaudio was closed here, but there is no close method for alsaaudio
         self.pa.terminate()
 
     def play(self, rtspconn, serverconn):
@@ -303,7 +303,8 @@ class AudioRealtime(Audio):
                     rtp = RTP_REALTIME(data)
                     self.handle(rtp)
                     audio = self.process(rtp)
-                    self.sink.write(audio)
+                    self.alsa.write(audio)
+                    
         except KeyboardInterrupt:
             pass
         finally:
@@ -419,7 +420,7 @@ class AudioBuffered(Audio):
                         data_ontime = False
 
                     audio = self.process(rtp)
-                    self.sink.write(audio)
+                    self.alsa.write(audio)
                     i += 1
 
     # server moves write index in buffer
