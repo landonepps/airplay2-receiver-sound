@@ -1,4 +1,4 @@
-FROM debian:buster
+FROM python:3.8.6-slim-buster
 
 RUN apt-get update -yy && \
     apt-get install -yy \
@@ -8,9 +8,6 @@ RUN apt-get update -yy && \
         avahi-utils \
         libnss-mdns \
         dnsutils \
-        python3 \
-        python3-pip \
-        python3-pyaudio \
         libffi-dev \
         alsa-utils \
 	libavformat-dev \
