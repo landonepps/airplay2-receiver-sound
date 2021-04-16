@@ -4,12 +4,6 @@ RUN apt-get update -yy && \
     apt-get install -yy \
         build-essential \
         pkg-config \
-#        avahi-daemon \
-#        avahi-discover \
-#        avahi-utils \
-#        libnss-mdns \
-#        dnsutils \
-#        libffi-dev \
         alsa-utils \
         libavformat-dev \
         libavcodec-dev \
@@ -18,8 +12,6 @@ RUN apt-get update -yy && \
         libavfilter-dev \
         libswscale-dev \
         libswresample-dev \
-		libsamplerate-dev \ # for alsa dsp 
-		libfftw3-dev \ # for alsa dsp 
         libasound2-dev \
         libssl-dev \
         libffi-dev \
@@ -38,23 +30,16 @@ FROM python:3.8.6-slim-buster as build
 
 RUN apt-get update -yy && \
     apt-get install -yy --no-install-recommends \
-        avahi-daemon \
-        avahi-discover \
-        avahi-utils \
-        libnss-mdns \
-        dnsutils \
-#        libffi-dev \
-        alsa-utils \
-#       libavformat-dev \
-#       libavcodec-dev \
-       libavdevice-dev \
-#       libavutil-dev \
-       libavfilter-dev \
-       libswscale-dev \
-       libswresample-dev \
-#	   libsamplerate-dev
-#       libasound2-dev 
-
+		avahi-daemon \
+		avahi-discover \
+		avahi-utils \
+		libnss-mdns \
+		dnsutils \
+		alsa-utils \
+		libavdevice-dev \
+		libavfilter-dev \
+		libswscale-dev \
+		libswresample-dev
 
 COPY --from=compile /opt/venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
