@@ -1,3 +1,6 @@
+# About this fork
+This fork replaces pyaudio / portaudio with alsaaudio. This was done because portaudio (and therefore pyaudio) does not seem to function correctly on the Raspberry Pi 4. This has the consequence of breaking Windows/macOS support.
+
 # Experimental
 
 Very quick python implementation of AP2 protocol using **minimal
@@ -94,3 +97,4 @@ Tested on Python 3.7.5 / macOS 10.15.2 with iPhone X 13.3 and Raspberry Pi 4
 
 https://emanuelecozzi.net/docs/airplay2
 
+ 
