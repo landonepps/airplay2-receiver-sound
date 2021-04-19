@@ -1,5 +1,5 @@
 # About this fork
-This fork replaces pyaudio / portaudio with alsaaudio. This was done because portaudio (and therefore pyaudio) does not seem to function correctly on the Raspberry Pi 4. This has the consequence of breaking Windows/macOS support.
+This fork replaces pyaudio / portaudio with [alsaaudio](http://larsimmisch.github.io/pyalsaaudio/]). This was done because portaudio (and therefore pyaudio) does not seem to function correctly on the Raspberry Pi 4. This has the consequence of breaking Windows/macOS support.
 
 # Experimental
 
