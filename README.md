@@ -52,41 +52,11 @@ docker run -it --rm --device /dev/snd --env AP2IFACE=eth0 --net host invano/ap2-
 
 ## macOS Catalina
 
-To run the receiver please use Python 3 and do the following:
-
-* Run the following commands
-
-```zsh
-brew install python3
-brew install portaudio
-virtualenv -p /usr/local/bin/python3 proto
-source proto/bin/activate
-pip install -r requirements.txt
-pip install --global-option=build_ext --global-option="-I/usr/local/Cellar/portaudio/19.6.0/include" --global-option="-L/usr/local/Cellar/portaudio/19.6.0/lib" pyaudio
-
-
-python ap2-receiver.py -m myap2 --netiface=en0
-```
+Not supported 
 
 ## Windows
 
-To run the receiver please use Python 3 and do the following:
-
-* Run the following commands
-
-```zsh
-cd [WHERE_YOU_CLONED_AIRPLAY2_RECEIVER]
-virtualenv airplay2-receiver
-cd airplay2-receiver
-.\Scripts\activate
-pip install -r requirements.txt
-pip install pipwin
-pipwin install pyaudio
-
-python ap2-receiver.py -m myap2 -n [YOUR_INTERFACE_GUID] (looks like this for instance {02681AC0-AD52-4E15-9BD6-8C6A08C4F836} )
-```
-
-* the AirPlay 2 receiver is announced as **myap2**.
+Not supported
 
 
 ---
