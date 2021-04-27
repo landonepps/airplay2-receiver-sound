@@ -1,6 +1,10 @@
 # About this fork
 This fork replaces pyaudio / portaudio with [alsaaudio](http://larsimmisch.github.io/pyalsaaudio/]). This was done because portaudio (and therefore pyaudio) does not seem to function correctly on the Raspberry Pi 4. This has the consequence of breaking Windows/macOS support.
 
+* The volume control uses alsaaudio's mixer object.
+* There is an equalizer plugin included. To use the plugin, create a .asoundrc file and map it into the container with `-v /path/to/asoundrc:/root/.asoundrc`. [See this stack exchange post](https://dsp.stackexchange.com/a/74760/57001) for instructions on creating a multiband equalizer with the ACDf ladspa / alsa plugin.
+* The dockerfile is a multistage build, which reduces the image size by roughly 50%
+
 # Experimental
 
 Very quick python implementation of AP2 protocol using **minimal
