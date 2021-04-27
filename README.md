@@ -54,6 +54,11 @@ Default network device is wlan0, you can change this with AP2IFACE env variable:
 docker run -it --rm --device /dev/snd --env AP2IFACE=eth0 --net host invano/ap2-receiver
 ```
 
+To load the equalizer, map an asoundrc file:
+```zsh
+docker run -it --rm --device /dev/snd -v ~/my_asoundrc:/root/.asoundrc  --env AP2IFACE=eth0 --net host invano/ap2-receiver
+```
+
 ## macOS Catalina
 
 Not supported 
@@ -63,9 +68,6 @@ Not supported
 Not supported
 
 
----
-
-Tested on Python 3.7.5 / macOS 10.15.2 with iPhone X 13.3 and Raspberry Pi 4
 
 ### Protocol notes
 
