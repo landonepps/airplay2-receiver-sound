@@ -76,7 +76,7 @@ def setup_global_structs(args):
 
     sonos_one_info = {
         # 'OSInfo': 'Linux 3.10.53',
-        # 'PTPInfo': 'OpenAVNU ArtAndLogic-aPTP-changes a5d7f94-0.0.1',
+         #'PTPInfo': 'OpenAVNU ArtAndLogic-aPTP-changes a5d7f94-0.0.1',
         'audioLatencies': [   {   'inputLatencyMicros': 0,
                                   'outputLatencyMicros': 400000,
                                   'type': 100},
@@ -91,11 +91,15 @@ def setup_global_structs(args):
                               {   'audioType': 'media',
                                   'inputLatencyMicros': 0,
                                   'outputLatencyMicros': 400000,
-                                  'type': 102}],
+                                  'type': 102},
+                                                                {   'audioType': 'media',
+                                  'inputLatencyMicros': 0,
+                                  'outputLatencyMicros': 600000,
+                                  'type': 103}],
         # 'build': '16.0',
         'deviceID': DEVICE_ID,
         'features': FEATURES,
-        # 'features': 496155769145856, # Sonos One
+         #'features': 496155769145856, # Sonos One
         # 'firmwareBuildDate': 'Nov  5 2019',
         # 'firmwareRevision': '53.3-71050',
         # 'hardwareRevision': '1.21.1.8-2',
@@ -109,7 +113,7 @@ def setup_global_structs(args):
         'protocolVersion': '1.1',
         'sdk': 'AirPlay;2.0.2',
         'sourceVersion': '366.0',
-        'statusFlags': 4,
+        'statusFlags': 0x4
         # 'statusFlags': 0x404 # Sonos One
         }
 
@@ -144,7 +148,7 @@ def setup_global_structs(args):
             "srcvers": SERVER_VERSION,
             "deviceid": DEVICE_ID,
             "features": "%s,%s" % (hex(FEATURES & 0xffffffff), hex(FEATURES >> 32 & 0xffffffff)),
-            "flags": "0x4",
+            #"flags": "0x4",
             # "name": "GINO", # random
             "model": "Airplay2-Receiver",  # random
             # "manufacturer": "Pino", # random
@@ -156,7 +160,7 @@ def setup_global_structs(args):
             "pi": "5dccfd20-b166-49cc-a593-6abd5f724ddb", # UUID generated casually
             "gid": "5dccfd20-b166-49cc-a593-6abd5f724ddb", # UUID generated casually
             "gcgl": "0",
-            # "vn": "65537",
+            "vn": "65537",
             "pk": "de352b0df39042e201d31564049023af58a106c6d904b74a68aa65012852997f"
             }
 
@@ -170,6 +174,7 @@ class AP2Handler(http.server.BaseHTTPRequestHandler):
         r = http.server.BaseHTTPRequestHandler.parse_request(self)
         self.protocol_version = "RTSP/1.0"
         self.close_connection = 0
+        print(r)
         return r
 
     def send_response(self, code, message=None):
@@ -664,8 +669,9 @@ def register_mdns(receiver_name):
 
     zeroconf = Zeroconf(ip_version=IPVersion.V4Only)
     zeroconf.register_service(info)
-    print("mDNS service registered")
+    print("mDNS service registered", info)
     return (zeroconf, info)
+
 
 def unregister_mdns(zeroconf, info):
     print("Unregistering...")
@@ -748,6 +754,7 @@ if __name__ == "__main__":
 
         with AP2Server(("0.0.0.0", PORT), AP2Handler) as httpd:
             print("serving at port", PORT)
+            print("connected with", httpd)
             httpd.serve_forever()
     except KeyboardInterrupt:
         pass
