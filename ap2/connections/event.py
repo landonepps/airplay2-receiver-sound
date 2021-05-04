@@ -6,6 +6,7 @@ from ..utils import get_logger, get_free_port
 class Event:
     def __init__(self):
         self.port = get_free_port()
+        print("eventing")
 
     def serve(self):
         self.logger = get_logger("event", level="DEBUG")

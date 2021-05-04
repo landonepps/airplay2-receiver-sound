@@ -15,6 +15,8 @@ class Stream:
         self.frames_packet = stream["spf"]
         self.type = stream["type"]
 
+        print("spawned")
+                        
         self.control_port, self.control_proc = Control.spawn()
         if self.type == Stream.REALTIME:
             self.server_control = stream["controlPort"]

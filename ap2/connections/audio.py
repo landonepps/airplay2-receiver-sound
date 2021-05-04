@@ -206,6 +206,7 @@ class Audio:
         self.rtp_buffer = RTPBuffer()
 
     def init_audio_sink(self):
+        print("audit")
         self.pa = pyaudio.PyAudio()
         self.sink = self.pa.open(format=self.pa.get_format_from_width(2),
                                  channels=2,
@@ -295,7 +296,7 @@ class AudioRealtime(Audio):
     def serve(self, playerconn):
         self.logger = get_logger("audio", level="DEBUG")
         self.init_audio_sink()
-
+        print("serve")
         try:
             while True:
                 data, address = self.socket.recvfrom(4096)
