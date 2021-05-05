@@ -22,7 +22,6 @@ With only little changes made from the original, it showcases **streaming Audio 
 
 **I won't be able to fix them, but let you know ...**
 
-
 - Always begin streaming first to virtual and then physical devices, otherwise its likely to fail
 
 - Multiple instances of virtual-receivers hosted on the same device won't work and mess mdns up
@@ -34,21 +33,20 @@ With only little changes made from the original, it showcases **streaming Audio 
 - Rarely an earlier closed connection prevents you from reconnecting, try `sudo killall -HUP mDNSResponder` to reset this behaviour
 
 
-**Tested devices & pairings**
+**Working devices & pairings**
 
-
-- [x] iOS device + other AirPlay 2 speakers
-- [x] HomePod streaming direct (standalone)
+- [☑️] iOS device + other AirPlay 2 speakers
 - [☑️] iOS device streaming directly
-- [ ] h#
-- [ ] 
-- h
+- [ ] HomePod streaming directly (standalone)
+- [☑️] Mac streaming directly (single device)
+- [ ] Streaming out of iTunes in general
 
 
-* macOS 11.14 (Silicon Mac) 
-* iMac (built 2012) - macOS 10.14 - Python 3.9
+* Raspberry Pi 4
+* Silicon Mac (M1) - macOS 11.14 - Python 3.9
+* Apple Mac - macOS 10.15 - Python 3.7.5
+* iMac from 2012 - macOS 10.14 - Python 3.8
 
-Tested pairing: Apple TV to virtual speaker,  
 
 
 ## Installation and usage (macOS)
@@ -78,8 +76,6 @@ python ap2-receiver.py -m SpeakerName --netiface=en1
 
 
 ## Details that didn't changed from original
-
-Tested on Python 3.7.5 / macOS 10.15.2 with iPhone X 13.3 and Raspberry Pi 4
 
 - HomeKit transient pairing (SRP/Curve25519/ChaCha20-Poly1305)
 - FairPlay (v3) authentication
