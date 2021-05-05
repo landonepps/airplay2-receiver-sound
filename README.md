@@ -39,10 +39,14 @@ I wont be able to fix them but let you know
 ## Installation and Options (macOS)
 
 **For Windows & Raspberry Pi check out the original code**
+
+http://github.com - automatic!
+[GitHub](http://github.com)
+
 https://github.com/openairplay/airplay2-receiver/blob/master/README.md#raspberry-pi-4
 
-brew install python3  
-brew install portaudio
+* brew install python3  
+* brew install portaudio
 brew install virtualenv
 brew install pyaudio
 
@@ -51,9 +55,9 @@ brew install pyaudio
 > virtualenv -p /usr/local/bin/python3 proto
 > source proto/bin/activate
 
-> pip install -r requirements.txt
-> pip install --global-option=build_ext --global-option="-I/usr/local/Cellar/portaudio/19.6.0/include" --global-option="-L/usr/local/Cellar/portaudio/19.6.0/lib" 
-> pyaudio
+* pip install -r requirements.txt 
+* pip install --global-option=build_ext --global-option="-I/usr/local/Cellar/portaudio/19.6.0/include" --global-option="-L/usr/local/Cellar/portaudio/19.6.0/lib" 
+* pyaudio
 
 > python ap2-receiver.py -m SpeakerName --netiface=en1
 
