@@ -38,7 +38,7 @@ I wont be able to fix them but let you know
 
 ## Installation and Options (macOS)
 
-**For Windows & Raspberry Pi check out the original code **
+**For Windows & Raspberry Pi check out the original code**
 https://github.com/openairplay/airplay2-receiver/blob/master/README.md#raspberry-pi-4
 
 brew install python3  
@@ -46,7 +46,7 @@ brew install portaudio
 brew install virtualenv
 brew install pyaudio
 
->> Start receiver with this command:
+**Start receiver with this command:**
 
 virtualenv -p /usr/local/bin/python3 proto
 source proto/bin/activate
@@ -57,7 +57,7 @@ python ap2-receiver.py -m SpeakerName --netiface=en1
 
 
 
-## Details that didnt't changed from the original
+## Details that didn't changed from original
 
 Tested on Python 3.7.5 / macOS 10.15.2 with iPhone X 13.3 and Raspberry Pi 4
 
@@ -67,7 +67,5 @@ Tested on Python 3.7.5 / macOS 10.15.2 with iPhone X 13.3 and Raspberry Pi 4
 - Airplay2 Service publication
 - Decoding of ALAC/44100/2 or AAC/44100/2
 
-### Protocol notes
-
-https://emanuelecozzi.net/docs/airplay2
+Protocol notes > https://emanuelecozzi.net/docs/airplay2
 
