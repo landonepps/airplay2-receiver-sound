@@ -1,45 +1,57 @@
-# Experimental (forked with sound)
+# Experimental Airplay 2 (forked with sound)
 
-Very quick python implementation of AP2 protocol using **minimal
-multi-room** features. For now it implements:
+Very quick python implementation of AP2 protocol using **minimal multi-room** features
+-- built and maintained by https://github.com/openairplay/airplay2-receiver
 
 
-- Volume control
+**So what's this fork for? Any big changes?**
+
+Nope, not really - little changes enabled **Streaming Audio to receiver with AirPlay 2**, the only difference to the beloved original.
+
+**New and old Features related to sound**:
+- Volume control from the sending device
+- Set Latency / Delay to match playing speed with physical devices
+- Connect with multiple virtual-receiver devices
+- 
 
 Tested with Sound: macOS 11.14 (Silicon Mac) / macOS 10.14 (built 2012) on Python 3.9
 
-**This code is experimental. This receiver do not expect to be a real receiver but a toolbox for learning/debugging all airplay protocols and related pairing/authentication methods.** 
 
 
 ## Known tricks and issues
 I wont be able to fix them but let you know
 
-- Make sure you have 'pyaudio' and 'virtualenv' already installed before everything else
+- Make sure you have 'pyaudio' and 'virtualenv' already installed before doing everything else
 - 
-- Start streaming to the virtual receiver and then to other devices enhances latency / quality
--   
+- Start streaming to the virtual-receiver device and then to physical devices to enhance latency / quality
 
 
 
-## Installation and remaining
+## Installation and Options (macOS)
 
-On macOS go along with these commands:
+**For Windows & Raspberry Pi check out the original>> **
 
-brew install python3
+brew install python3  
 brew install portaudio
+brew install virtualenv
+brew install pyaudio
+
+Start receiver with this command:
+
 virtualenv -p /usr/local/bin/python3 proto
 source proto/bin/activate
 pip install -r requirements.txt
 pip install --global-option=build_ext --global-option="-I/usr/local/Cellar/portaudio/19.6.0/include" --global-option="-L/usr/local/Cellar/portaudio/19.6.0/lib" pyaudio
 
-python ap2-receiver.py -m myap2 --netiface=en0
-
-
-(Lookup installation for Raspberry Pi & Windows)
+python ap2-receiver.py -m SpeakerName --netiface=en1
 
 
 
-### Unchanged from original fork
+
+
+
+
+## Details that didnt't changed from the original
 
 Tested on Python 3.7.5 / macOS 10.15.2 with iPhone X 13.3 and Raspberry Pi 4
 
