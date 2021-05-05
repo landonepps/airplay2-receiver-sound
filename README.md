@@ -37,9 +37,12 @@ With only little changes made from the original, it showcases **streaming Audio 
 **Tested devices & pairings**
 
 
-- [x] list
-- [ ] ö
-- [ ] l
+- [x] iOS device + other AirPlay 2 speakers
+- [x] HomePod streaming direct (standalone)
+- [☑️] iOS device streaming directly
+- [ ] h#
+- [ ] 
+- h
 
 
 * macOS 11.14 (Silicon Mac) 
