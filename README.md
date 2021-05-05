@@ -2,9 +2,7 @@
 
 Very quick python implementation of AP2 protocol using **minimal multi-room** features -- built and maintained by https://github.com/openairplay/airplay2-receiver
 
-https://imgur.com/Mgmg9KX
-
-<blockquote class="imgur-embed-pub" lang="en" data-id="Mgmg9KX"><a href="https://imgur.com/Mgmg9KX">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+<img src="https://imgur.com/Mgmg9KX">
 
 **So what's this fork for? Any big changes?**
 
