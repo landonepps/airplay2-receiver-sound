@@ -8,7 +8,7 @@
 With only little changes made from the original it showcases **Streaming Audio to receiver with AirPlay 2** for learning/debugging/playing in an easy, reproduceable and working way.
 
 
-## Working features, testing and limitations
+## Features and possibilities
 
 - Individual volume control from the sending device
 - Set Latency / Delay to match playing speed with physical devices
@@ -20,7 +20,8 @@ Tested with Sound: macOS 11.14 (Silicon Mac) & macOS 10.14 (built 2012) on Pytho
 Tested pairing: Apple TV to virtual speaker,  
 
 
-**I wont be able to fix them, but let you know ...**
+**I won't be able to fix them, but let you know ...**
+
 
 - Always begin streaming first to virtual and then physical devices, otherwise its likely to fail
 
@@ -44,10 +45,9 @@ brew install python3
 brew install portaudio
 brew install virtualenv
 brew install pyaudio
-
 ```
 
-Start virtual AirPlay receiver:
+Start virtual receiver (AirPlay-Target):
 
 ```
 virtualenv -p /usr/local/bin/python3 proto
@@ -57,7 +57,6 @@ pip install --global-option=build_ext --global-option="-I/usr/local/Cellar/porta
 pyaudio
 
 python ap2-receiver.py -m SpeakerName --netiface=en1
-
 ```
 
 
