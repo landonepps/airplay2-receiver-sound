@@ -1,12 +1,12 @@
 # Experimental Airplay 2 (forked with sound)
 
-Very quick python implementation of AP2 protocol using **minimal multi-room** features -- built and maintained by https://github.com/openairplay/airplay2-receiver
+Very quick python implementation of AP2 protocol using **minimal multi-room** features -- built and originally created by https://github.com/openairplay/airplay2-receiver
 
 
 ![IMG_489B6A3DA261-1](https://user-images.githubusercontent.com/48214337/117120989-55222c00-ad94-11eb-9520-2e22e601eb45.jpeg)
 
 
-**So what's this fork for? Any big changes?**
+## So what's this fork for? Any big changes?
 
 Nope, not really - little changes enabled **Streaming Audio to receiver with AirPlay 2**, the only difference to the beloved original.
 
@@ -19,10 +19,10 @@ Nope, not really - little changes enabled **Streaming Audio to receiver with Air
 - 
 
 Tested with Sound: macOS 11.14 (Silicon Mac) / macOS 10.14 (built 2012) on Python 3.9
-Tested combinations: Apple TV to virtual speaker,  
+Tested pairing: Apple TV to virtual speaker,  
 
 
-## Known tricks and issues
+## Optimization and known issues
 
 I wont be able to fix them but let you know
 
@@ -38,7 +38,8 @@ I wont be able to fix them but let you know
 
 ## Installation and Options (macOS)
 
-**For Windows & Raspberry Pi check out the original code>> **
+**For Windows & Raspberry Pi check out the original code **
+https://github.com/openairplay/airplay2-receiver/blob/master/README.md#raspberry-pi-4
 
 brew install python3  
 brew install portaudio
