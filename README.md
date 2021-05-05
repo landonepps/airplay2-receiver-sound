@@ -1,14 +1,13 @@
 # Experimental Airplay 2 (forked with sound)
 
-Very quick python implementation of AP2 protocol using **minimal multi-room** features
-
--- built and maintained by https://github.com/openairplay/airplay2-receiver
+Very quick python implementation of AP2 protocol using **minimal multi-room** features -- built and maintained by https://github.com/openairplay/airplay2-receiver
 
 
 
 **So what's this fork for? Any big changes?**
 
 Nope, not really - little changes enabled **Streaming Audio to receiver with AirPlay 2**, the only difference to the beloved original.
+
 
 **New and old Features related to sound**:
 - Volume control from the sending device
@@ -17,7 +16,7 @@ Nope, not really - little changes enabled **Streaming Audio to receiver with Air
 - 
 
 Tested with Sound: macOS 11.14 (Silicon Mac) / macOS 10.14 (built 2012) on Python 3.9
-
+Tested combinations: Apple TV to virtual speaker,  
 
 
 ## Known tricks and issues
