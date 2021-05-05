@@ -1,17 +1,14 @@
 # Experimental Airplay 2 (forked with sound)
 
-Very quick python implementation of AP2 protocol using **minimal multi-room** features -- built and originally created by https://github.com/openairplay/airplay2-receiver
+>> Very quick python implementation of AP2 protocol using **minimal multi-room** features -- built and originally created by [openairplay](https://github.com/openairplay/airplay2-receiver)
 
 
 ![IMG_489B6A3DA261-1](https://user-images.githubusercontent.com/48214337/117120989-55222c00-ad94-11eb-9520-2e22e601eb45.jpeg)
 
-
-## So what's this fork for? Any big changes?
-
-Nope, not really - little changes enabled **Streaming Audio to receiver with AirPlay 2**, the only difference to the beloved original.
+With only little changes made from the original it showcases **Streaming Audio to receiver with AirPlay 2** for learning/debugging/playing in an easy, reproduceable and working way.
 
 
-**New and old Features related to sound**:
+## Features, Testing and Limitations
 
 - Individual volume control from the sending device
 - Set Latency / Delay to match playing speed with physical devices
@@ -22,19 +19,17 @@ Nope, not really - little changes enabled **Streaming Audio to receiver with Air
 
 > Tested pairing: Apple TV to virtual speaker,  
 
-
-## Optimization and known issues
-I wont be able to fix them but let you know.....
+**I wont be able to fix them, but let you know ...**
 
 - Always begin streaming first to virtual and then physical devices, otherwise its likely to fail
 
 - Multiple instances of virtual-receivers hosted on the same device won't work and mess mdns up
 
-- Make sure you have 'pyaudio' and 'virtualenv' installed & built before running any command
+- 
 
 - Always remember to enter 'virtualenv' - without your connection will break even if the device is visible
 
-
+- Make sure you have 'pyaudio' and 'virtualenv' installed & built before running any command
 
 
 ## Installation and usage (macOS
