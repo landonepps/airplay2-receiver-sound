@@ -35,13 +35,13 @@ With only little changes made from the original, it showcases **streaming Audio 
 
 **Working pairings and cases**
 
-☑️ iOS device streaming on multiple AP2 speakers
-☑️ iOS device streaming directly
-☑️ Control volume/playstate when in group
-❌ HomePod streaming directly (standalone)
-☑️ Mac streaming directly (single device)
-❌ Streaming out of iTunes in general
-❌ Streaming out of iTunes in general
+* ☑️ iOS device streaming on multiple AP2 speakers
+* ☑️ iOS device streaming directly
+* ☑️ Control volume/playstate when in group
+* ❌ HomePod streaming directly (standalone)
+* ☑️ Mac streaming directly (single device)
+* ❌ Streaming out of iTunes in general
+* ❌ Streaming out of iTunes in general
 
 * Raspberry Pi 4
 * Silicon Mac (M1) - macOS 11.14 - Python 3.9
