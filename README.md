@@ -1,19 +1,19 @@
 # Experimental Airplay 2 (forked with sound)
 
 > Very quick python implementation of AP2 protocol using **minimal multi-room** features 
-> - built and originally created by [openairplay](https://github.com/openairplay/airplay2-receiver)
+> - created and forked from [openairplay](https://github.com/openairplay/airplay2-receiver)
 
 
 ![IMG_489B6A3DA261-1](https://user-images.githubusercontent.com/48214337/117120989-55222c00-ad94-11eb-9520-2e22e601eb45.jpeg)
 
-With only little changes made from the original, it showcases **streaming Audio to/from virtual-receiver devices with AirPlay 2** for learning/debugging/playing in an easy, reproduceable and working way.
+With only little changes made from the original, it showcases **streaming Audio to/from virtual-receiver devices with AirPlay 2** for learning/debugging/playing in an easy, reproducible and working way.
 
 
 ## Features and possibilities
 
 - Create a virtual device receiving AirPlay 2 streams and plays them 
 
-- Config latency / delay to match playing speed of other devices
+- Config latency/delay to match playing speed of other devices
 
 - Control speaker volume individually from the streaming device
 
@@ -22,9 +22,9 @@ With only little changes made from the original, it showcases **streaming Audio 
 
 **I won't be able to fix them, but let you know ...**
 
-- Always begin streaming first to virtual and then physical devices, otherwise its likely to fail
+- Always begin streaming first to virtual and then physical devices, otherwise it's likely to fail
 
-- Multiple instances of virtual-receivers hosted on the same device won't work and mess mdns up
+- Multiple instances of virtual receivers hosted on the same device won't work and mess mdns up
 
 - Always requires the 'virtualenv', without the connection will break (even if the device is visible correctly)
 
@@ -75,7 +75,7 @@ python ap2-receiver.py -m SpeakerName --netiface=en1
 
 
 
-## Details that didn't changed from original
+## Details that didn't change from original
 
 - HomeKit transient pairing (SRP/Curve25519/ChaCha20-Poly1305)
 - FairPlay (v3) authentication
@@ -84,4 +84,3 @@ python ap2-receiver.py -m SpeakerName --netiface=en1
 - Decoding of ALAC/44100/2 or AAC/44100/2
 
 Protocol notes > https://emanuelecozzi.net/docs/airplay2
-
