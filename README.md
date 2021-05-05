@@ -76,7 +76,7 @@ pyaudio
 python ap2-receiver.py -m SpeakerName --netiface=en1
 ```
 
-
+**Many many thanks to [openairplay](https://github.com/openairplay/airplay2-receiver) for creating and maintaining this project!**
 
 ## Details that didn't change from original
 
