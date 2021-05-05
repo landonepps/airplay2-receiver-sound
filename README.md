@@ -48,12 +48,14 @@ brew install pyaudio
 
 **Start receiver with this command:**
 
-virtualenv -p /usr/local/bin/python3 proto
-source proto/bin/activate
-pip install -r requirements.txt
-pip install --global-option=build_ext --global-option="-I/usr/local/Cellar/portaudio/19.6.0/include" --global-option="-L/usr/local/Cellar/portaudio/19.6.0/lib" pyaudio
+> virtualenv -p /usr/local/bin/python3 proto
+> source proto/bin/activate
 
-python ap2-receiver.py -m SpeakerName --netiface=en1
+> pip install -r requirements.txt
+> pip install --global-option=build_ext --global-option="-I/usr/local/Cellar/portaudio/19.6.0/include" --global-option="-L/usr/local/Cellar/portaudio/19.6.0/lib" 
+> pyaudio
+
+> python ap2-receiver.py -m SpeakerName --netiface=en1
 
 
 
