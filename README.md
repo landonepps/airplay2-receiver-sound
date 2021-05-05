@@ -2,7 +2,9 @@
 
 Very quick python implementation of AP2 protocol using **minimal multi-room** features -- built and maintained by https://github.com/openairplay/airplay2-receiver
 
-<img src="https://imgur.com/Mgmg9KX">
+
+![IMG_489B6A3DA261-1](https://user-images.githubusercontent.com/48214337/117120989-55222c00-ad94-11eb-9520-2e22e601eb45.jpeg)
+
 
 **So what's this fork for? Any big changes?**
 
@@ -10,7 +12,8 @@ Nope, not really - little changes enabled **Streaming Audio to receiver with Air
 
 
 **New and old Features related to sound**:
-- Volume control from the sending device
+
+- Individual volume control from the sending device
 - Set Latency / Delay to match playing speed with physical devices
 - Connect with multiple virtual-receiver devices
 - 
@@ -20,11 +23,15 @@ Tested combinations: Apple TV to virtual speaker,
 
 
 ## Known tricks and issues
+
 I wont be able to fix them but let you know
 
 - Always begin streaming first to virtual and then physical devices, otherwise its likely to fail
+
 - Multiple instances of virtual-receivers hosted on the same device won't work and mess mdns up
+
 - Make sure you have 'pyaudio' and 'virtualenv' already installed & built before running any command
+
 - Always enter the 'virtualenv' before starting AirPlay, without it the connection will break even if the device is visible
 
 
