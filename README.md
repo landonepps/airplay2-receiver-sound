@@ -21,22 +21,23 @@ Tested with Sound: macOS 11.14 (Silicon Mac) / macOS 10.14 (built 2012) on Pytho
 ## Known tricks and issues
 I wont be able to fix them but let you know
 
-- Make sure you have 'pyaudio' and 'virtualenv' already installed before doing everything else
-- 
-- Start streaming to the virtual-receiver device and then to physical devices to enhance latency / quality
+- Always begin streaming first to virtual and then physical devices, otherwise its likely to fail
+- Multiple instances of virtual-receivers hosted on the same device won't work and mess mdns up
+- Make sure you have 'pyaudio' and 'virtualenv' already installed & built before running any command
+- Always enter the 'virtualenv' before starting AirPlay, without it the connection will break even if the device is visible
 
 
 
 ## Installation and Options (macOS)
 
-**For Windows & Raspberry Pi check out the original>> **
+**For Windows & Raspberry Pi check out the original code>> **
 
 brew install python3  
 brew install portaudio
 brew install virtualenv
 brew install pyaudio
 
-Start receiver with this command:
+>> Start receiver with this command:
 
 virtualenv -p /usr/local/bin/python3 proto
 source proto/bin/activate
@@ -44,10 +45,6 @@ pip install -r requirements.txt
 pip install --global-option=build_ext --global-option="-I/usr/local/Cellar/portaudio/19.6.0/include" --global-option="-L/usr/local/Cellar/portaudio/19.6.0/lib" pyaudio
 
 python ap2-receiver.py -m SpeakerName --netiface=en1
-
-
-
-
 
 
 
