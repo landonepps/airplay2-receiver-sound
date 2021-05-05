@@ -1,12 +1,12 @@
 # Experimental Airplay 2 (forked with sound)
 
-> Very quick python implementation of AP2 protocol using **minimal multi-room** features 
-> - created and forked from [openairplay](https://github.com/openairplay/airplay2-receiver)
+> Very quick python implementation of AP2 protocol using **minimal multi-room** features created by [openairplay](https://github.com/openairplay/airplay2-receiver)
 
+With only little changes made from the original, it showcases **streaming Audio to/from virtual-receiver devices with AirPlay 2** for learning/debugging/playing in an easy, reproducible and working way.
 
 ![IMG_489B6A3DA261-1](https://user-images.githubusercontent.com/48214337/117120989-55222c00-ad94-11eb-9520-2e22e601eb45.jpeg)
 
-With only little changes made from the original, it showcases **streaming Audio to/from virtual-receiver devices with AirPlay 2** for learning/debugging/playing in an easy, reproducible and working way.
+
 
 
 ## Features and possibilities
