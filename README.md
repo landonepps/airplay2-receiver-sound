@@ -33,14 +33,15 @@ With only little changes made from the original, it showcases **streaming Audio 
 - Rarely an earlier closed connection prevents you from reconnecting, try `sudo killall -HUP mDNSResponder` to reset this behaviour
 
 
-**Working devices & pairings**
+**Working pairings and cases**
 
-- [☑️] iOS device + other AirPlay 2 speakers
-- [☑️] iOS device streaming directly
-- [ ] HomePod streaming directly (standalone)
-- [☑️] Mac streaming directly (single device)
-- [ ] Streaming out of iTunes in general
-
+☑️ iOS device streaming on multiple AP2 speakers
+☑️ iOS device streaming directly
+☑️ Control volume/playstate when in group
+❌ HomePod streaming directly (standalone)
+☑️ Mac streaming directly (single device)
+❌ Streaming out of iTunes in general
+❌ Streaming out of iTunes in general
 
 * Raspberry Pi 4
 * Silicon Mac (M1) - macOS 11.14 - Python 3.9
