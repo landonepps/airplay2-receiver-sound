@@ -1,6 +1,6 @@
 # Experimental Airplay 2 (forked with sound)
 
->> Very quick python implementation of AP2 protocol using **minimal multi-room** features -- built and originally created by [openairplay](https://github.com/openairplay/airplay2-receiver)
+> Very quick python implementation of AP2 protocol using **minimal multi-room** features -- built and originally created by [openairplay](https://github.com/openairplay/airplay2-receiver)
 
 
 ![IMG_489B6A3DA261-1](https://user-images.githubusercontent.com/48214337/117120989-55222c00-ad94-11eb-9520-2e22e601eb45.jpeg)
@@ -8,16 +8,17 @@
 With only little changes made from the original it showcases **Streaming Audio to receiver with AirPlay 2** for learning/debugging/playing in an easy, reproduceable and working way.
 
 
-## Features, Testing and Limitations
+## Working features, testing and limitations
 
 - Individual volume control from the sending device
 - Set Latency / Delay to match playing speed with physical devices
-- Connect with multiple virtual-receiver devices
-- 
+- Connect with multiple virtual-receiver devices and otherwise
 
-> Tested with Sound: macOS 11.14 (Silicon Mac) / macOS 10.14 (built 2012) on Python 3.9
 
-> Tested pairing: Apple TV to virtual speaker,  
+Tested with Sound: macOS 11.14 (Silicon Mac) & macOS 10.14 (built 2012) on Python 3.9
+
+Tested pairing: Apple TV to virtual speaker,  
+
 
 **I wont be able to fix them, but let you know ...**
 
@@ -25,16 +26,17 @@ With only little changes made from the original it showcases **Streaming Audio t
 
 - Multiple instances of virtual-receivers hosted on the same device won't work and mess mdns up
 
-- 
+- Always requires the 'virtualenv', without the connection will break (even if the device is visible correctly)
 
-- Always remember to enter 'virtualenv' - without your connection will break even if the device is visible
+- Make sure you have 'pyaudio' and 'virtualenv' installed & built files before setting the receiver up
 
-- Make sure you have 'pyaudio' and 'virtualenv' installed & built before running any command
+- Rarely an earlier closed connection prevents you from reconnecting, try `sudo killall -HUP mDNSResponder` to reset this behaviour
 
 
-## Installation and usage (macOS
 
-**For [Windows](https://github.com/openairplay/airplay2-receiver/blob/master/README.md#windows) & [Raspberry Pi](https://github.com/openairplay/airplay2-receiver/blob/master/README.md#raspberry-pi-4)  check out the original code**
+## Installation and usage (macOS)
+
+Find installation **For [Windows](https://github.com/openairplay/airplay2-receiver/blob/master/README.md#windows) & [Raspberry Pi](https://github.com/openairplay/airplay2-receiver/blob/master/README.md#raspberry-pi-4)** in the original code.
 
 
 ```
@@ -45,7 +47,7 @@ brew install pyaudio
 
 ```
 
-Start virtual AirPlay device:
+Start virtual AirPlay receiver:
 
 ```
 virtualenv -p /usr/local/bin/python3 proto
@@ -57,7 +59,6 @@ pyaudio
 python ap2-receiver.py -m SpeakerName --netiface=en1
 
 ```
-
 
 
 
