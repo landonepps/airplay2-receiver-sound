@@ -18,26 +18,28 @@ Nope, not really - little changes enabled **Streaming Audio to receiver with Air
 - Connect with multiple virtual-receiver devices
 - 
 
-Tested with Sound: macOS 11.14 (Silicon Mac) / macOS 10.14 (built 2012) on Python 3.9
-Tested pairing: Apple TV to virtual speaker,  
+> Tested with Sound: macOS 11.14 (Silicon Mac) / macOS 10.14 (built 2012) on Python 3.9
+
+> Tested pairing: Apple TV to virtual speaker,  
 
 
 ## Optimization and known issues
-I wont be able to fix them but let you know
+I wont be able to fix them but let you know.....
 
 - Always begin streaming first to virtual and then physical devices, otherwise its likely to fail
 
 - Multiple instances of virtual-receivers hosted on the same device won't work and mess mdns up
 
-- Make sure you have 'pyaudio' and 'virtualenv' already installed & built before running any command
+- Make sure you have 'pyaudio' and 'virtualenv' installed & built before running any command
 
-- Always enter the 'virtualenv' before starting AirPlay, without it the connection will break even if the device is visible
+- Always remember to enter 'virtualenv' - without your connection will break even if the device is visible
 
 
 
-## Installation and Options (macOS)
 
-**For [Windows](http://github.com) & [Raspberry Pi](https://github.com/openairplay/airplay2-receiver/blob/master/README.md#raspberry-pi-4)  check out the original code**
+## Installation and usage (macOS
+
+**For [Windows](https://github.com/openairplay/airplay2-receiver/blob/master/README.md#windows) & [Raspberry Pi](https://github.com/openairplay/airplay2-receiver/blob/master/README.md#raspberry-pi-4)  check out the original code**
 
 
 ```
@@ -48,7 +50,7 @@ brew install pyaudio
 
 ```
 
-To start receiving run this command:
+Start virtual AirPlay device:
 
 ```
 virtualenv -p /usr/local/bin/python3 proto
