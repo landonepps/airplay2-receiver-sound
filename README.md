@@ -23,7 +23,6 @@ Tested pairing: Apple TV to virtual speaker,
 
 
 ## Optimization and known issues
-
 I wont be able to fix them but let you know
 
 - Always begin streaming first to virtual and then physical devices, otherwise its likely to fail
@@ -38,28 +37,25 @@ I wont be able to fix them but let you know
 
 ## Installation and Options (macOS)
 
-**For Windows & Raspberry Pi check out the original code**
+**For [Windows](http://github.com) & [Raspberry Pi](https://github.com/openairplay/airplay2-receiver/blob/master/README.md#raspberry-pi-4)  check out the original code**
 
-http://github.com - automatic!
-[GitHub](http://github.com)
 
-https://github.com/openairplay/airplay2-receiver/blob/master/README.md#raspberry-pi-4
 
-* brew install python3  
-* brew install portaudio
+brew install python3  
+brew install portaudio
 brew install virtualenv
 brew install pyaudio
 
 **Start receiver with this command:**
 
-> virtualenv -p /usr/local/bin/python3 proto
-> source proto/bin/activate
+´virtualenv -p /usr/local/bin/python3 proto
+source proto/bin/activate
 
-* pip install -r requirements.txt 
-* pip install --global-option=build_ext --global-option="-I/usr/local/Cellar/portaudio/19.6.0/include" --global-option="-L/usr/local/Cellar/portaudio/19.6.0/lib" 
-* pyaudio
-
-> python ap2-receiver.py -m SpeakerName --netiface=en1
+pip install -r requirements.txt 
+pip install --global-option=build_ext --global-option="-I/usr/local/Cellar/portaudio/19.6.0/include" --global-option="-L/usr/local/Cellar/portaudio/19.6.0/lib" 
+pyaudio
+´
+python ap2-receiver.py -m SpeakerName --netiface=en1
 
 
 
