@@ -20,6 +20,7 @@ With only little changes made from the original, it showcases **streaming Audio 
 - Connect with multiple virtual-receiver devices and otherwise
 
 
+
 **I won't be able to fix them, but let you know ...**
 
 - Always begin streaming first to virtual and then physical devices, otherwise it's likely to fail
@@ -33,8 +34,8 @@ With only little changes made from the original, it showcases **streaming Audio 
 - Rarely an earlier closed connection prevents you from reconnecting, try `sudo killall -HUP mDNSResponder` to reset this behaviour
 
 
-**Working pairings and cases**
 
+**Working pairings and cases**
 * ☑️ iOS device streaming on multiple AP2 speakers
 * ☑️ iOS device streaming directly
 * ☑️ Control volume/playstate when in group
@@ -43,6 +44,8 @@ With only little changes made from the original, it showcases **streaming Audio 
 * ❌ Streaming out of iTunes in general
 * ❌ Streaming out of iTunes in general
 
+
+**Devices tested with sound/airplaying**
 * Raspberry Pi 4
 * Silicon Mac (M1) - macOS 11.14 - Python 3.9
 * Apple Mac - macOS 10.15 - Python 3.7.5
@@ -53,7 +56,6 @@ With only little changes made from the original, it showcases **streaming Audio 
 ## Installation and usage (macOS)
 
 Find installation for **[Windows](https://github.com/openairplay/airplay2-receiver/blob/master/README.md#windows) & [Raspberry Pi](https://github.com/openairplay/airplay2-receiver/blob/master/README.md#raspberry-pi-4)** in the original code.
-
 
 ```
 brew install python3  
