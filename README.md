@@ -42,11 +42,9 @@ With only little changes made from the original, it showcases **streaming Audio 
 * ❌ HomePod streaming directly (standalone)
 * ☑️ Mac streaming directly (single device)
 * ❌ Streaming out of iTunes in general
-* ❌ Streaming out of iTunes in general
 
 
 **Devices tested with sound/airplaying**
-* Raspberry Pi 4
 * Silicon Mac (M1) - macOS 11.14 - Python 3.9
 * Apple Mac - macOS 10.15 - Python 3.7.5
 * iMac from 2012 - macOS 10.14 - Python 3.8
