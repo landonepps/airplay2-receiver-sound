@@ -1,4 +1,4 @@
-# Experimental Airplay 2 (forked with sound)
+# Experimental Airplay 2 (forked with working sound)
 
 > Very quick python implementation of AP2 protocol using **minimal multi-room** features created by [openairplay](https://github.com/openairplay/airplay2-receiver)
 
