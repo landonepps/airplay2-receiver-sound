@@ -3,6 +3,7 @@ import socket
 import logging
 import platform
 import subprocess
+import alsaaudio
 
 def get_logger(name, level="INFO"):
     logging.basicConfig(filename="%s.log" % name,
@@ -45,13 +46,10 @@ def get_volume():
         pct = int(subprocess.check_output(["osascript", "-e", "output volume of (get volume settings)"]).rstrip())
         vol = interpolate(pct, 0, 100, -30, 0)
     elif subsys == "Linux":
-        line_pct = subprocess.check_output(["amixer", "get", "PCM"]).splitlines()[-1]
-        m = re.search(b"\[([0-9]+)%\]", line_pct)
-        if m:
-            pct = int(m.group(1))
-            if pct < 45:
-                pct = 45
-        else: pct = 50
+        # Assume the first mixer device
+        control = alsaaudio.mixers()[0]
+        mixer = alsaaudio.Mixer(control=control,device="default")
+        pct = mixer.getvolume()[0];
         vol = interpolate(pct, 45, 100, -30, 0)
     elif subsys == "Windows":
         # Volume get is not managed under windows, let's set to a default volume
@@ -70,6 +68,9 @@ def set_volume(vol):
         pct = int(interpolate(vol, -30, 0, 0, 100))
         subprocess.run(["osascript", "-e", "set volume output volume %d" % pct])
     elif subsys == "Linux":
-        pct = int(interpolate(vol, -30, 0, 45, 100))
+        # Assume the first mixer device
+        control = alsaaudio.mixers()[0]
+        mixer = alsaaudio.Mixer(control=control,device="default")
 
-        subprocess.run(["amixer", "set", "PCM", "%d%%" % pct])
+        pct = int(interpolate(vol, -30, 0, 45, 100))
+        mixer.setvolume(pct)
