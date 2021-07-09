@@ -327,17 +327,6 @@ class Audio:
             rate=self.sample_rate,
         )
 
-        audioDevicelatency = \
-            self.pa.get_default_output_device_info()['defaultHighOutputLatency']
-            #defaultLowOutputLatency is also available
-        print(f"audioDevicelatency (sec): {audioDevicelatency:0.5f}")
-        pyAudioDelay = self.sink.get_output_latency()
-        print(f"pyAudioDelay (sec): {pyAudioDelay:0.5f}")
-        ptpDelay = 0.002
-        self.sample_delay = pyAudioDelay + audioDevicelatency + codecLatencySec + ptpDelay
-        print(f"Total sample_delay (sec): {self.sample_delay:0.5f}")
-
-
     def decrypt(self, rtp):
         c = ChaCha20_Poly1305.new(key=self.session_key, nonce=rtp.nonce)
         c.update(rtp.aad)
@@ -386,7 +375,7 @@ class AudioRealtime(Audio):
 
     def fini_audio_sink(self):
         # pyaudio was closed here, but there is no close method for alsaaudio
-        self.pa.terminate()
+        pass
 
     def play(self, rtspconn, serverconn):
         # for now RealTime does not use RTPBuffer at all, we don't use this method
